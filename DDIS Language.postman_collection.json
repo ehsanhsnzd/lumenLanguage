@@ -1,0 +1,410 @@
+{
+	"info": {
+		"_postman_id": "8e6d7220-ad59-4d11-a635-1269d6b0ab70",
+		"name": "DDIS Language",
+		"description": "Return sentences with country languages by word id",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Form",
+			"item": [
+				{
+					"name": "Get form",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{domain}}/api/v1/DDIS/lang/form/5cd129ffd6b6fe7344000e94",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"DDIS",
+								"lang",
+								"form",
+								"5cd129ffd6b6fe7344000e94"
+							]
+						},
+						"description": "Get form"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all forms",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{domain}}/api/v1/DDIS/lang/forms",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"DDIS",
+								"lang",
+								"forms"
+							]
+						},
+						"description": "Get form"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all forms page",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{domain}}/api/v1/DDIS/lang/forms/?page=1",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"DDIS",
+								"lang",
+								"forms",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Get all form"
+					},
+					"response": []
+				},
+				{
+					"name": "New form",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"title\":\"new\"}"
+						},
+						"url": {
+							"raw": "{{domain}}/api/v1/DDIS/lang/form",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"DDIS",
+								"lang",
+								"form"
+							]
+						},
+						"description": "Create new page form"
+					},
+					"response": []
+				},
+				{
+					"name": "update form",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\" : \"updated title\"\n}"
+						},
+						"url": {
+							"raw": "{{domain}}/api/v1/DDIS/lang/form/5cd7d0e5d6b6fe1948004cd3",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"DDIS",
+								"lang",
+								"form",
+								"5cd7d0e5d6b6fe1948004cd3"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Update form API"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete form",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{domain}}/api/v1/DDIS/lang/form/5ccd4fc7d6b6fe1fe4004da4",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"DDIS",
+								"lang",
+								"form",
+								"5ccd4fc7d6b6fe1fe4004da4"
+							]
+						},
+						"description": "Delete form API"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sentence",
+			"item": [
+				{
+					"name": "New Sentence",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"form_id\":\"5cd2b4b8d6b6fe184000641c\",\n\t\"slug\":\"_\",\n\t\"translate\":{\n\t\t\"en\":\"khane\",\n\t\t\"fa\":\"hmm\"\n\t} \n}"
+						},
+						"url": {
+							"raw": "{{domain}}/api/v1/DDIS/lang/sentence",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"DDIS",
+								"lang",
+								"sentence"
+							]
+						},
+						"description": "create new sentence"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Sentences",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{domain}}/api/v1/DDIS/lang/sentences",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"DDIS",
+								"lang",
+								"sentences"
+							]
+						},
+						"description": "Get all Sentences with pagination"
+					},
+					"response": []
+				},
+				{
+					"name": "Get sentence by form_id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{domain}}/api/v1/DDIS/lang/form/sentences/5cd2b4b8d6b6fe184000641c",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"DDIS",
+								"lang",
+								"form",
+								"sentences",
+								"5cd2b4b8d6b6fe184000641c"
+							]
+						},
+						"description": "Get sentence by formid"
+					},
+					"response": []
+				},
+				{
+					"name": "Get sentence by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{domain}}/api/v1/DDIS/lang/sentence/5cd3ee82d6b6fe0d34000112",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"DDIS",
+								"lang",
+								"sentence",
+								"5cd3ee82d6b6fe0d34000112"
+							]
+						},
+						"description": "Get sentence by id"
+					},
+					"response": []
+				},
+				{
+					"name": "update sentence",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"form_id\":\"5cd2b4b8d6b6fe1840006415\",\n\t\"slug\":\"_\",\n\t\"translate\":{\n\t\t\"en\":\"khanesa\",\n\t\t\"fa\":\"hmm\"\n\t} \n}"
+						},
+						"url": {
+							"raw": "{{domain}}/api/v1/DDIS/lang/sentence/5cd3ee82d6b6fe0d34000112",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"DDIS",
+								"lang",
+								"sentence",
+								"5cd3ee82d6b6fe0d34000112"
+							]
+						},
+						"description": "update sentence by id"
+					},
+					"response": []
+				},
+				{
+					"name": "delete sentence",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"form_id\":\"5cd2b4b8d6b6fe1840006415\",\n\t\"slug\":\"_\",\n\t\"translate\":{\n\t\t\"en\":\"khane\",\n\t\t\"fa\":\"hmm\"\n\t} \n}"
+						},
+						"url": {
+							"raw": "{{domain}}/api/v1/DDIS/lang/sentence/5cd2b4d3d6b6fe34dc00386d",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"DDIS",
+								"lang",
+								"sentence",
+								"5cd2b4d3d6b6fe34dc00386d"
+							]
+						},
+						"description": "delete sentence by id"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
