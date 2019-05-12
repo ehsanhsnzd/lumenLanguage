@@ -1,0 +1,21 @@
+{
+    "name": "ddholiday/language",
+    "description": "language for sentence",
+    "type": "project",
+    "license": "DDHoliday",
+    "authors": [
+        {
+            "name": "Ehsan Hosseinzadeh azad",
+            "email": "Ehsan@ddsafar.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "DDIS\\lang\\": ""
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+
+    }
+}
