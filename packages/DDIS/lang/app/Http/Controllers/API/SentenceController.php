@@ -81,7 +81,7 @@ class SentenceController extends LangControllerAbstract
      */
     public function set(Request $request)
     {
-        $params = $request->json()->all();
+        $params = $request->all();
         try {
             $this->setMeta('status', 'success');
             $this->setData('sentence', $this->Service->set($params));
@@ -104,7 +104,7 @@ class SentenceController extends LangControllerAbstract
      */
     public function update(Request $request, $id)
     {
-        $params = $request->json()->all();
+        $params = $request->all();
         try {
             $this->setMeta('status', 'success');
             $this->setData('sentence', $this->Service->update($params,$id));
@@ -116,7 +116,7 @@ class SentenceController extends LangControllerAbstract
         } catch (EntryNotFoundException $e) {
             $this->setMeta('status', 'fail');
             $this->setMeta('message', $e->getMessage());
-            return response()->json($this->setResponse(), Response::HTTP_BAD_REQUEST);
+            return response()->json($this->setResponse(), Response::HTTP_NOT_FOUND);
         }
     }
 

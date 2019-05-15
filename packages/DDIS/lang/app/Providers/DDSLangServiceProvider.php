@@ -24,7 +24,7 @@ class DDSLangServiceProvider extends ServiceProvider
     public function boot()
     {
         //INSERT PACKAGE ROUTES
-        $this->loadRoutesFrom( dirname(__DIR__, 2).'\Routes\api.php'  );
+        $this->loadRoutesFrom( dirname(__DIR__, 2).'/routes/api.php'  );
         //PUBLISH PACKAGE CONFIG FILE
         $this->mergeConfigFrom(__DIR__ . '/../../config/DDISlang.php', 'DDISlang');
 

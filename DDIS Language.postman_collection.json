@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "8e6d7220-ad59-4d11-a635-1269d6b0ab70",
+		"_postman_id": "6ec1de14-0b00-4104-9377-cdda5bcd425b",
 		"name": "DDIS Language",
 		"description": "Return sentences with country languages by word id",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -166,7 +166,7 @@
 							"raw": "{\n\t\"title\" : \"updated title\"\n}"
 						},
 						"url": {
-							"raw": "{{domain}}/api/v1/DDIS/lang/form/5cd7d0e5d6b6fe1948004cd3",
+							"raw": "{{domain}}/api/v1/DDIS/lang/form/5cd7d0e5d6b6fe1948004cd3?",
 							"host": [
 								"{{domain}}"
 							],
@@ -236,7 +236,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"form_id\":\"5cd2b4b8d6b6fe184000641c\",\n\t\"slug\":\"_\",\n\t\"translate\":{\n\t\t\"en\":\"khane\",\n\t\t\"fa\":\"hmm\"\n\t} \n}"
+							"raw": "{\n\t\"form_id\":\"5cd971abfc2bb90a173bd3c5\",\n\t\"slug\":\"_\",\n\t\"translate\":{\n\t\t\"en\":\"khane\",\n\t\t\"fa\":\"vvvv\"\n\t} \n}"
 						},
 						"url": {
 							"raw": "{{domain}}/api/v1/DDIS/lang/sentence",
@@ -319,7 +319,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{domain}}/api/v1/DDIS/lang/sentence/5cd3ee82d6b6fe0d34000112",
+							"raw": "{{domain}}/api/v1/DDIS/lang/sentence/5cd971b1fc2bb90a173bd3c6",
 							"host": [
 								"{{domain}}"
 							],
@@ -329,7 +329,7 @@
 								"DDIS",
 								"lang",
 								"sentence",
-								"5cd3ee82d6b6fe0d34000112"
+								"5cd971b1fc2bb90a173bd3c6"
 							]
 						},
 						"description": "Get sentence by id"
@@ -350,10 +350,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"form_id\":\"5cd2b4b8d6b6fe1840006415\",\n\t\"slug\":\"_\",\n\t\"translate\":{\n\t\t\"en\":\"khanesa\",\n\t\t\"fa\":\"hmm\"\n\t} \n}"
+							"raw": "{\n\t\"form_id\":\"5cd971abfc2bb90a173bd3c5\",\n\t\"slug\":\"_\",\n\t\"translate\":{\n\t\t\"en\":\"vcc\",\n\t\t\"fa\":\"aa\"\n\t} \n}"
 						},
 						"url": {
-							"raw": "{{domain}}/api/v1/DDIS/lang/sentence/5cd3ee82d6b6fe0d34000112",
+							"raw": "{{domain}}/api/v1/DDIS/lang/sentence/5cd983fbfc2bb90a173bd3db",
 							"host": [
 								"{{domain}}"
 							],
@@ -363,7 +363,7 @@
 								"DDIS",
 								"lang",
 								"sentence",
-								"5cd3ee82d6b6fe0d34000112"
+								"5cd983fbfc2bb90a173bd3db"
 							]
 						},
 						"description": "update sentence by id"

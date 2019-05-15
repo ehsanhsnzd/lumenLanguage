@@ -13,7 +13,7 @@ use DDIS\lang\app\Models\Mongodb\LangModel;
 class Form extends LangModel
 {
 
-    protected $Collection ="form";
+    protected $collection ="form";
 
     protected $primaryKey ="_id";
 

@@ -6,6 +6,14 @@
  * Time: 12:16 PM
  */
 return [
+
+    'meta' => [
+        'meta' => [
+            'status',
+            'message'
+        ],
+    ],
+
     'form' => [
         '200' => [
             'data' => [
@@ -15,8 +23,8 @@ return [
                 ]
             ]
         ],
-        'delete' =>[
-            'data'=>[
+        'delete' => [
+            'data' => [
                 'delete'
             ]
         ]
@@ -32,12 +40,6 @@ return [
                     ]
                 ]
             ]
-        ]
-    ],
-    'meta'=>[
-        'meta'=> [
-            'status',
-            'message'
         ]
     ]
 

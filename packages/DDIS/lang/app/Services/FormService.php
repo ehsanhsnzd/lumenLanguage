@@ -68,7 +68,7 @@ class FormService extends BaseService
      * @throws ValidationException
      * @throws \DDIS\lang\app\Exceptions\EmptyException
      */
-    public function set($params):Collection
+    public function set(array $params):Collection
     {
 
         $params=$this->validate($params);
@@ -106,13 +106,15 @@ class FormService extends BaseService
      */
     private function validate( $params): array
     {
-        $rules = [
-            'title' => 'required'
-        ];
+        $rules=['title'=>'required'];
+        foreach ($params as $key => $value) {
+            $rules[$key] = 'keyExist:input.form';
+        }
+
 
         $validator = Validator::make($params, $rules);
-        if ($validator->fails()) {
-            throw new ValidationException($validator);
+        if ($validator->fails() ) {
+            throw new ValidationException($validator );
         } else {
             return $params;
         }

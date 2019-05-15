@@ -3,7 +3,7 @@
 use DDIS\lang\app\Models\Form;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
-
+use DDIS\lang\app\Models\Sentence;
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -18,5 +18,14 @@ use Faker\Generator as Faker;
 $factory->define(Form::class, function (Faker $faker) {
     return [
         'title' => $faker->title,
+    ];
+});
+
+$factory->define(Sentence::class, function (Faker $faker) {
+    return [
+        'form_id' =>    function () {
+        return factory(Form::class)->create()->id;},
+        'slug' => $faker->randomDigit,
+        'translate' => ['en'=>'en','fa'=>'fa']
     ];
 });

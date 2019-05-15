@@ -8,7 +8,7 @@
 
 namespace DDIS\lang\app\Traits;
 
-
+use DDIS\lang\app\Models\Form;
 use Illuminate\Support\Facades\Validator;
 
 trait Validation
@@ -22,5 +22,16 @@ trait Validation
             if(in_array($attribute,  $config)) return true;
             return false;
         });
+
+        Validator::extend('FormExist',function ($attribute, $value, $parameters){
+
+            $Form = new Form();
+            if($Form->find($value)){
+                return true;
+            }
+            return false;
+        });
+
   }
+
 }

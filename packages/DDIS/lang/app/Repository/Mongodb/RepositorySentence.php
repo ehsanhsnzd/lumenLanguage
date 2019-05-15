@@ -41,11 +41,15 @@ class RepositorySentence implements RepositoryInterface
      */
     public function get(string $id): Collection
     {
-        $object = Sentence::where('form_id',$id)->paginate(config('DDISlang.paginateQTY'));
-        if ($object) {
-            return collect($object);
+
+            $object = Sentence::where('form_id', $id)->paginate(config('DDISlang.paginateQTY'));
+        if (Form::find($id) && $object->count()) {
+            if ($object) {
+                return collect($object);
+            }
         }
-        throw new EntryNotFoundException("Object not found");
+            throw new EntryNotFoundException("Object not found");
+
     }
 
     /**
@@ -69,7 +73,8 @@ class RepositorySentence implements RepositoryInterface
      */
     public function set(array $params): Collection
     {
-        $object = new Sentence();
+
+            $object = new Sentence();
 
             foreach ($params as $key => $value) {
                 $object->$key = $value;
@@ -79,6 +84,7 @@ class RepositorySentence implements RepositoryInterface
             if ($object) {
                 return collect($object);
             }
+
 
         throw new EmptyException("Wrong data");
     }
@@ -91,15 +97,23 @@ class RepositorySentence implements RepositoryInterface
      */
     public function update(array $params, string $id): Collection
     {
-        if (Form::find($params['form_id'])) {
-            $object = $this->model($id);
-            foreach ($params as $key => $value) {
-                $object->$key = $value;
+               $object = $this->model($id);
+            if(isset($params['translate']))
+            foreach ($params['translate'] as $key => $value) {
+                Sentence::where('_id', $id)->update(array("translate.$key" => $value));
+                unset($params['translate']);
             }
-            $object->save();
+
+
+                foreach ($params as $key => $value) {
+                    $object->$key = $value;
+                }
+
+             $object->save();
+
             if ($object) {
                 return collect($object);
-            }}
+            }
             throw new EntryNotFoundException("Object not found");
 
     }

@@ -13,8 +13,10 @@ use DDIS\lang\app\Models\Mongodb\LangModel;
 
 class Sentence extends LangModel
 {
-    protected $Collection = 'sentence';
+    protected $collection = 'sentence';
 
     protected $primaryKey = '_id';
+
+    protected $fillable=['translate'];
 
 }

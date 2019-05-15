@@ -10,6 +10,7 @@ namespace DDIS\lang\app\Services;
 
 
 use DDIS\lang\app\Exceptions\EmptyException;
+use DDIS\lang\app\Models\Form;
 use DDIS\lang\app\Repository\RepositorySentence;
 use Illuminate\Container\EntryNotFoundException;
 use Illuminate\Support\Collection;
@@ -98,29 +99,33 @@ class SentenceService extends BaseService
      * @throws ValidationException
      */
 
-    private function validate($params, bool $newObject = false): array
+    private function validate($params, bool $newObject = False): array
     {
+
+
         foreach ($params as $key => $value) {
             $rules[$key] = 'keyExist:input.sentence';
-            $validateParams[$key]=$value;
         }
-        $rules['form_id'] = 'exists:forms,_id';
+        $rules['form_id'] = 'FormExist';
+
         unset($rules['translate']);
 
-            if($params['translate'])
+            if(isset($params['translate']))
         foreach ($params['translate'] as $key => $value) {
             $rules[$key] = 'keyExist:languages';
-            $validateParams[$key]=$value;
         }
 //            if (!$this->checkTranslate($params["translate"])) {
 //                unset($params['translate']);
 //                $rules['translate'] = 'required';
 //            }
         if ($newObject) {
-            $rules['form_id'] = 'required';
+            $rules['form_id'] = 'required|FormExist';
             $rules['slug'] = 'required';
         }
-        $validator = Validator::make($validateParams, $rules);
+
+
+
+        $validator = Validator::make($params, $rules);
         if ($validator->fails() ) {
             throw new ValidationException($validator );
         } else {

@@ -74,11 +74,11 @@ class FormController extends LangControllerAbstract
      */
     public function set(Request $request)
     {
-        $param['title'] = $request->json('title');
+        $params = $request->all();
 
         try {
             $this->setMeta('status', 'success');
-            $this->setData('form',$this->Service->set($param));
+            $this->setData('form',$this->Service->set($params));
             return response()->json($this->setResponse(),Response::HTTP_OK);
         } catch (ValidationException $e) {
             $this->setMeta('status', 'fail');

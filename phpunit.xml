@@ -12,12 +12,12 @@
         <testsuite name="Application Test Suite">
 
             <directory suffix="Test.php">./tests</directory>
+            <directory suffix="Test.php">./packages/DDIS</directory>
         </testsuite>
     </testsuites>
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">./app</directory>
-
         </whitelist>
     </filter>
     <php>

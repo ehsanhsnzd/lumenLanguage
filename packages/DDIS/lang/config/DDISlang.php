@@ -20,4 +20,4 @@ return array(
             'translate'
         ]
     ],
-    'paginateQTY' => 4);
+    'paginateQTY' => 20);
