@@ -131,6 +131,7 @@ class FormController extends LangControllerAbstract
             $this->setMeta('message', $e->getMessage());
             return Response()->json($this->setResponse(),Response::HTTP_NOT_FOUND);
         }
+
     }
 
 }
