@@ -75,6 +75,20 @@ class SentenceController extends LangControllerAbstract
     }
 
 
+    public function getBySlug($id)
+    {
+        try {
+//            $this->setMeta('status', 'success');
+            $this->setData('sentences',$this->Service->getBySlug($id));
+            return Response()->json($this->setResponse(),Response::HTTP_OK);
+        } catch (EntryNotFoundException $e) {
+            $this->setMeta('status', 'fail');
+            $this->setMeta('message', $e->getMessage());
+            return Response()->json($this->setResponse(),Response::HTTP_NOT_FOUND);
+        }
+    }
+
+
     /**
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse

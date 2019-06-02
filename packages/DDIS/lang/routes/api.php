@@ -24,6 +24,7 @@ Route::group(['prefix' => '/api/v1/DDIS/lang/',
 
         Route::get('form/sentences/{id}', 'SentenceController@getByForm');
         Route::get('sentence/{id}', 'SentenceController@get');
+        Route::get('sentence/slug/{id}', 'SentenceController@getBySlug');
         Route::get('sentences', 'SentenceController@getAll');
         Route::post('sentence', 'SentenceController@set');
         Route::put('sentence/{id}', 'SentenceController@update');

@@ -50,6 +50,15 @@ class SentenceService extends BaseService
 
     /**
      * @param string $id
+     * @return Collection
+     */
+    public function getBySlug(string $id): Collection
+    {
+        return $this->Repository->getgetBySlug($id);
+    }
+
+    /**
+     * @param string $id
      * @return mixed
      * @throws EntryNotFoundException
      */

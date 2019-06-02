@@ -52,6 +52,25 @@ class RepositorySentence implements RepositoryInterface
 
     }
 
+
+    /**
+     * @param string $id
+     * @return Collection
+     * @throws EntryNotFoundException
+     */
+    public function getBySlug(string $id): Collection
+    {
+
+            $object = Sentence::where('slug', $id)->get();
+        if ($object->count()) {
+            if ($object) {
+                return collect($object);
+            }
+        }
+            throw new EntryNotFoundException("Object not found");
+
+    }
+
     /**
      * @param string $id
      * @return mixed
